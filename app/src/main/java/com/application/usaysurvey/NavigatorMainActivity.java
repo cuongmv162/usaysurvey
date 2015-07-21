@@ -28,6 +28,7 @@ public class NavigatorMainActivity extends ActionBarActivity implements Navigati
 
     private CharSequence mTitle;
     private ImageView mRefresh;
+    private TextView mActionBarTitleText;
 
     public static final int MENU_TAKE_SURVEY = 0;
     public static final int MENU_ABOUT_THIS = 1;
@@ -111,19 +112,26 @@ public class NavigatorMainActivity extends ActionBarActivity implements Navigati
     }
 
     public void restoreActionBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        actionBar.setCustomView(R.layout.custom_display_actionbar);
-        mRefresh = (ImageView)findViewById(R.id.refresh_button);
-        ((TextView)findViewById(R.id.title)).setText(mTitle);
+        setupActionBar();
+        mRefresh = (ImageView) findViewById(R.id.refresh_button);
+        mActionBarTitleText = ((TextView) findViewById(R.id.title));
+
         if(mIsOnSurveyPage){
             mRefresh.setVisibility(View.VISIBLE);
             mRefresh.setOnClickListener(this);
         }else{
             mRefresh.setVisibility(View.GONE);
         }
+        mActionBarTitleText.setText(mTitle);
+    }
+
+    private void setupActionBar(){
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setCustomView(R.layout.custom_display_actionbar);
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
+        actionBar.setHomeAsUpIndicator(getResources().getDrawable(R.drawable.ic_drawer));
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
     }

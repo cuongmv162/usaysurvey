@@ -116,9 +116,6 @@ public class NavigationDrawerFragment extends Fragment {
                 }
             }
         };
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
-
         if (mFromSavedInstanceState) {
             mDrawerLayout.openDrawer(mFragmentContainerView);
         }
