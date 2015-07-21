@@ -44,8 +44,7 @@ public class NavigatorMainActivity extends ActionBarActivity implements Navigati
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
-        mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+        mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 
     }
 
@@ -56,7 +55,7 @@ public class NavigatorMainActivity extends ActionBarActivity implements Navigati
         FragmentManager fragmentManager = getSupportFragmentManager();
         PlaceholderFragment fragment = null;
         Bundle args = new Bundle();
-        if(!isFirstLaunch){
+        if(!isFirstLaunch && position != 2){
             slideToNext(true);
         }
         switch(position){
@@ -73,7 +72,19 @@ public class NavigatorMainActivity extends ActionBarActivity implements Navigati
                 mIsOnSurveyPage = false;
                 break;
             case 2:
-                this.finish();
+                new AlertDialog.Builder(this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle(getString(R.string.quit_application_title))
+                        .setMessage(getString(R.string.quit_application_text))
+                        .setPositiveButton(getString(R.string.quit_application_positive), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+
+                        })
+                        .setNegativeButton(getString(R.string.quit_application_negative), null)
+                        .show();
         }
         if(fragment != null){
             fragment.setArguments(args);

@@ -3,7 +3,7 @@
 
     <string name="side_menu_section_1">SURVEYS</string>
     <string name="side_menu_section_2">ABOUT</string>
-    <string name="side_menu_section_3">Quit</string>
+    <string name="side_menu_section_3">EXIT</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
