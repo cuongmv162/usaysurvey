@@ -7,14 +7,18 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.application.usaysurvey.R;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class TakeSurveyFragment extends PlaceholderFragment {
     public static final String TAG = TakeSurveyFragment.class.getSimpleName();
+
+    private ImageView imageView;
 
     public TakeSurveyFragment() {
         // Required empty public constructor
@@ -29,8 +33,16 @@ public class TakeSurveyFragment extends PlaceholderFragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        init();
+    }
+
+    public void init(){
+        imageView = (ImageView) getView().findViewById(R.id.imageView);
+        Picasso.with(getActivity())
+                .load("https://dhdbhh0jsld0o.cloudfront.net/m/b10685ce58b89ecbeef2_")
+                .into(imageView);
     }
 
     @Override

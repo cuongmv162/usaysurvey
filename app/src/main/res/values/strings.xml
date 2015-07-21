@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">USaySurvey</string>
 
-    <string name="side_menu_section_1">Take Survey</string>
-    <string name="side_menu_section_2">About uSay</string>
+    <string name="side_menu_section_1">SURVEYS</string>
+    <string name="side_menu_section_2">ABOUT</string>
     <string name="side_menu_section_3">Quit</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -14,6 +14,15 @@
     <string name="refresh_menu_button">Refresh</string>
     <string name="usay_home_page">https://www.usay.co</string>
 
-<!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="access_token">6eebeac3dd1dc9c97a06985b6480471211a777b39aa4d0e03747ce6acc4a3369</string>
+    <string name="request_link">https://www-staging.usay.co/app/surveys.json</string>
+
+
+    <!--DIALOG Strings -->
+    <string name="quit_application_title">Close Application</string>
+    <string name="quit_application_text">Are you sure to quit this application?</string>
+    <string name="quit_application_positive">Goodbye!</string>
+    <string name="quit_application_negative">OOPs! Mistaken pressed!</string>
+
 </resources>

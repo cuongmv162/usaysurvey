@@ -10,4 +10,15 @@
         <item name="android:textColor">#ffffff</item>
     </style>
 
+    <style name="PlaceNameText">
+        <item name="android:textSize">@dimen/height_percent_5</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PlaceDescription">
+        <item name="android:textSize">@dimen/height_percent_3</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
 </resources>
