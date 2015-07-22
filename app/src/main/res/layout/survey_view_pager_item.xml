@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/height_percent_15">
+
+        <TextView
+            android:id="@+id/place_name"
+            style="@style/PlaceNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="NAME" />
+
+
+        <TextView
+            android:id="@+id/place_description"
+            style="@style/PlaceDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/place_name"
+            android:gravity="center"
+            android:text="Description" />
+
+
+        <Button
+            android:id="@+id/button_take_survey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/place_description"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/height_percent_50"
+            android:background="@drawable/button_selector"
+            android:padding="13dp"
+            android:text="Take  the  survey"
+            android:textColor="#ffffff"
+            android:typeface="sans" />
+
+    </RelativeLayout>
+
+</FrameLayout>

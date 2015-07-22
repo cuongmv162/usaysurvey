@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import com.application.usaysurvey.R;
 import com.squareup.picasso.Picasso;
 
+import adapter.SurveyPagerAdapter;
+import utils.customlayout.VerticViewPager;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -19,6 +22,8 @@ public class TakeSurveyFragment extends PlaceholderFragment {
     public static final String TAG = TakeSurveyFragment.class.getSimpleName();
 
     private ImageView imageView;
+    private VerticViewPager mViewPager;
+    private SurveyPagerAdapter mAdapter;
 
     public TakeSurveyFragment() {
         // Required empty public constructor
@@ -39,10 +44,12 @@ public class TakeSurveyFragment extends PlaceholderFragment {
     }
 
     public void init(){
-        imageView = (ImageView) getView().findViewById(R.id.imageView);
-        Picasso.with(getActivity())
-                .load("https://dhdbhh0jsld0o.cloudfront.net/m/b10685ce58b89ecbeef2_")
-                .into(imageView);
+        View currentView = getView();
+        mViewPager = (VerticViewPager) currentView.findViewById(R.id.survey_view_pager);
+        mAdapter = new SurveyPagerAdapter(getFragmentManager(),mContext);
+        mViewPager.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
+
     }
 
     @Override
